@@ -1,0 +1,24 @@
+<!--Los pipes modifican el template pero son modificar los datos-->
+<h1 class="animated fadeIn fast"> {{heroe.nombre | uppercase}}<small> ({{heroe.aparicion | date:'y'}})</small></h1>
+<hr>
+
+<div class="row animated fadeIn">
+  <div class="col-md-4">
+
+    <img [src]="heroe.img" class="img-fluid" alt="">
+    <br><br>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+    
+  </div>
+  <div class="col-md-8">
+    <h3>{{heroe.nombre}}</h3>
+    <hr>
+    <p>
+      {{heroe.bio}}
+    </p>
+    <div> <!--Se puede meter la condicion dentro del ngIF-->
+      <img *ngIf="heroe.casa==='DC'" class="logo" src="assets/img/DCname.png" alt="dcLogo">
+      <img *ngIf="heroe.casa ==='Marvel'" class="logo" src="assets/img/marvelIcon.png" alt="marvelLogo">
+    </div>
+  </div>
+</div>
