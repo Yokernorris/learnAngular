@@ -1,0 +1,16 @@
+<div class="card animated fadeIn fast">
+  <img [src]="heroe.img" class="card-img-top img-fluid" [alt]="heroe.nombre">
+  <div class="card-block m-3">
+    <h4 class="card-title">{{heroe.nombre}}</h4>
+    <p class="card-text">{{heroe.bio}}</p>
+    <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+
+    <!--Con el boton, hace falta crear la la funcion verHeroe en el componente lo que lleva a importar el servicio de rutas-->
+    <button (click)="verHeroe()"
+            type="button" class="btn btn-outline-primary btn-block">
+      Ver más...
+    </button>
+    <!--Esto es la forma de hacerlo programandolo directamente-->
+    <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary ">Ver más...</a>-->
+  </div>
+</div>
