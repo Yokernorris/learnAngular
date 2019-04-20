@@ -61,10 +61,10 @@ export class HeroesService {
 
   getHeroes = () => this.heroes;
   getHeroe = (idx:string) => this.heroes[idx];
+
   buscarHeroe =(termino:string):Heroe[] =>{
     termino = termino.toLowerCase();
     let heroesArr:Heroe[] = [];
-
     //heroe actua como iterator
     for (let heroe of this.heroes){
       let nombre = heroe.nombre.toLowerCase();

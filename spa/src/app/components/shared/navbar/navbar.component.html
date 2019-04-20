@@ -20,10 +20,12 @@
       </li>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscaHeroe(textoH.value)" aria-label="Search" #textoH>
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
-    </form>
+   <!-- Aqui habia antes form, mas tarde veremos como se hace con form-->
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+      <button (click)="buscarHeroe(buscarTexto.value)"
+        class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
+    </div>
 
   </div>
 </nav>
