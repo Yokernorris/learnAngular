@@ -23,6 +23,79 @@
         <td>lowercase</td>
         <td>{{nombre | lowercase}}</td>
       </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice:0:3</td> <!--Recorta-->
+        <td>{{nombre | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <!--Version con arrays-->
+        <td>{{array}}</td>
+        <td>slice:0:3</td> <!--Recorta-->
+        <td>{{array | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td>{{pi}}</td>
+        <td>number:'1.0-4'</td> <!--Recorta-->
+        <td>{{pi | number:'1.0-4'}}</td>
+      </tr>
+      <tr>
+        <td>{{a}}</td>
+        <td>percent:'1.2-4'</td> <!--Recorta-->
+        <td>{{a | percent:'1.2-4'}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>salario</td> <!--Recorta-->
+        <td>{{salario | currency:'EUR':'€':'4.0-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{valorDePromesa}}</td>
+        <td>async</td> <!--Recorta-->
+        <td>{{valorDePromesa |async}}</td>
+      </tr>
+
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date</td> <!--Recorta-->
+        <td>{{fecha |date:'mediumDate'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombre2}}</td>
+        <td>capitalizado</td> <!--Recorta-->
+        <td>{{nombre2 | capitalizado:false}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombre}}</td>
+        <td>
+          contrasena:{{activar}}
+          <br>
+          <button
+            (click)="activar = !activar"
+            type="button"
+            class="btn btn-outline-primary">
+            activar/desactivar
+          </button>
+        </td> <!--Recorta-->
+        <td>{{nombre | contrasena:activar}}</td>
+      </tr>
+
+
     </tbody>
   </table>
+  <h4>
+    <ul>
+      <!--El slice tambien podemos usarlo con *ngfor-->
+      <li *ngFor=" let item of array | slice:5:20">{{item}}</li>
+    </ul>
+  </h4>
+
+  <h4>JSON</h4>
+  <pre>{{pokemon | json}} </pre>
+
+  <h4>Youtube <small>video</small></h4>
+  <hr>
+  <iframe width="560" height="315" [src]=" video | doomseguro: 'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
