@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { SearhComponent } from './components/searh/searh.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearhComponent
   ],
   imports: [
     BrowserModule,
