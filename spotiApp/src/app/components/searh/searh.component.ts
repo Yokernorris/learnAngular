@@ -9,17 +9,23 @@ import  {SpotifyService} from '../../services/spotify.service';
 export class SearhComponent {
 
   artistas:any[] = [];
+  loading:boolean;
 
-  constructor(private _spotify:SpotifyService) { }
+  constructor(private _spotify:SpotifyService) {
+  }
 
   buscar(termino:string){
-    console.log(termino);
-    this._spotify.getArtista(termino)
-      .subscribe((data:any) => {
-        console.log(data);
-        this.artistas = data;
-      });
-
+    if(termino != '') {
+      this.loading = true;
+      console.log(termino);
+      this._spotify.getArtista(termino)
+        .subscribe((data: any) => {
+          console.log(data);
+          this.artistas = data;
+          this.loading = false;
+        });
+    }
+    else this.artistas = [];
   }
 
 }
