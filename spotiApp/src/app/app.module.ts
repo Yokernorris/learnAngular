@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SearhComponent } from './components/searh/searh.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SearhComponent } from './components/searh/searh.component';
     HomeComponent,
     ArtistaComponent,
     NavbarComponent,
-    SearhComponent
+    SearhComponent,
+    NoImagePipe,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
