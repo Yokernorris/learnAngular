@@ -18,7 +18,7 @@ export class SearhComponent {
     if(termino != '') {
       this.loading = true;
       console.log(termino);
-      this._spotify.getArtista(termino)
+      this._spotify.getArtistas(termino)
         .subscribe((data: any) => {
           console.log(data);
           this.artistas = data;

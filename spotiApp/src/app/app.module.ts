@@ -12,6 +12,7 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SearhComponent } from './components/searh/searh.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { DoomseguroPipe } from './pipes/doomseguro.pipe';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 
@@ -23,6 +24,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     SearhComponent,
     NoImagePipe,
+    DoomseguroPipe,
     TarjetasComponent,
     LoadingComponent
   ],
