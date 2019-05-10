@@ -9,8 +9,11 @@
 <ion-content color="dark">
   <ion-list >
     <ion-item *ngFor="let pendiente of deseosService.listas"
-    detail color="tertiary">
+    detail color="tertiary"
+    (click)="listaSeleccionada(pendiente)">
       <ion-label>{{pendiente.titulo}}</ion-label>
+
+      <ion-note slot="end" color="danger">{{pendiente.items.length}} items</ion-note>
     </ion-item>
   </ion-list>
 

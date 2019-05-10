@@ -17,6 +17,7 @@ export class Lista {
         this.completada = false;
         this.items = [];
 
+        //Crea un id dependiendo de la hora asi el id es unico
         this.id = new Date().getTime();
     }
 }

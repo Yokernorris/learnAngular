@@ -9,9 +9,31 @@ export class DeseosService {
   listas:Lista[] = [];
 
   constructor() {
-    const lista1 = new Lista("Lista de la compra");
-    const lista2 = new Lista("Tareas pendientes");
-
-    this.listas.push(lista1,lista2);
+    this.loadStorage();
   }
+
+  crearLista(titulo:string){
+    const nuevaLista = new Lista(titulo);
+    this.listas.push(nuevaLista);
+    this.saveStorage();
+
+    return nuevaLista.id;
+  }
+
+  saveStorage(){
+    //data es la key
+    localStorage.setItem('data', JSON.stringify(this.listas));
+  }
+
+  getLista(id : string | number){
+    id = Number(id);
+    return this.listas.find(listaData => listaData.id === id);
+
+  }
+
+  loadStorage(){
+    if(JSON.parse(localStorage.getItem('data')))
+      this.listas = JSON.parse(localStorage.getItem('data'));
+  }
+
 }
